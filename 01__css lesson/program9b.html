@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+<p>
+    #include stdio.h><br>
+        int a[10][10],visited[10],n;<br>
+        void dfs(int u)<br>
+        int v;<br>
+        visited[u]=1;<br>
+        printf("%d\t",u);<br>
+        for(v=0;v<n;v++)<br>
+        {<br>
+        if(a[u][v]==1&&visited[v]==0)dfs(v);<br>
+        }
+        }<br>
+        void main()<br>
+        {<br>
+        int source,i,j;<br>
+        printf("Enter number of vertices::");<br>
+        scanf("%d",&n);<br>
+        printf("\n\nEnter graph as adjacency matrix form\n\n");<br>
+        for(i=0;i<n;i++)<br>
+        {<br>
+        for(j=0;j<n;j++)<br>
+        scanf("%d",&a[i][j]);<br>
+        }<br>
+        for(i=0;i<n;i++)<br>
+        visited[i]=0;<br>
+        printf("\n\nEnter source vertex::");<br>
+        scanf("%d",&source);<br>
+        printf("\nDFS of given graph\n");<br>
+        printf("Node visited from source node %d are::\n",source);<br>
+        dfs(source);<br>
+        }<br>
+        
+</p>
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

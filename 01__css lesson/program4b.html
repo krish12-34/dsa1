@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+<p>
+    #include stdio.h><br>
+        int tower(int n, char s, char t, char d)<br>
+        {<br>
+        if(n==0)<br>
+        return 0;<br>
+        tower(n-1,s,d,t);<br>
+        printf("\n Move disk %d from %c to %c\n",n, s ,d);<br>
+        tower(n-1,t,s,d);<br>
+        return 0;<br>
+        }<br>
+        void main()<br>
+        {<br>
+        char A,B,C;<br>
+        int n;<br>
+        printf("Enter the number of elements\n\n");<br>
+        scanf("%d",&n);<br>
+        printf("\n Sequence of disk\n");<br>
+        tower(n,'A','B','C');<br>
+        printf("\n");<br>
+        }<br>
+        
+</p>
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

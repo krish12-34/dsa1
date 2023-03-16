@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <p>
+                    #include stdio.h><br>
+                        #include stdlib.h><br>
+                        
+                        
+                        struct node<br>
+                        {<br>
+                         int data;<br>
+                        struct node *link;<br>
+                        };<br>
+                        
+                        typedef struct node* NODE;<br>
+                        NODE start=NULL;<br>
+                        NODE create_node()<br>
+                        {<br>
+                        NODE ptr;<br>
+                        ptr=(NODE)malloc(sizeof(struct node));<br>
+                        if(ptr==NULL)<br>
+                        {<br>
+                        printf("\nINSUFFICIENT MEMORY\n");<br>
+                           exit(0);<br>
+                        }<br>
+                            printf("\nEnter data value for the node\n");<br>
+                        scanf("%d",&ptr->data);<br>
+                        ptr->link=NULL;<br>
+                            return ptr;<br>
+                        }<br>
+                        NODE insert_front(NODE start)<br>
+                        {<br>
+                            NODE ptr;<br>
+                        ptr=create_node();<br>
+                            if(start== NULL)<br>
+                            start= ptr;<br>
+                            else<br>
+                            {<br>
+                        ptr->link = start;<br>
+                                 start = ptr;<br>
+                            }<br>
+                            }<br>
+                        NODE delete_front(NODE start)<br>
+                        {<br>
+                            NODE temp; if(start == NULL)<br>
+                        printf("\n\nLIST EMPTY\n\n");<br>
+                            else<br>
+                            {<br>
+                                temp = start;<br>
+                                start= start->link;<br>
+                        printf("\n\nDeleted node is\n");<br>
+                        printf("|%d|\n\n",temp->data);<br>
+                                free(temp);<br>
+                            }<br>
+                        }<br>
+                        
+                        void display(NODE start)<br>
+                        {<br>
+                            NODE temp;<br>
+                            if(start== NULL)<br>
+                        printf("\n\nLIST EMPTY\n\n");<br>
+                            else<br>
+                            {<br>
+                             int count=0;<br>
+                             temp = start;<br>
+                        printf("\n\nSTACK AS LIST IS:\n");<br>
+                             while(temp != NULL)<br>
+                            {<br>
+                                 printf("|%d|->",temp->data);<br>
+                                 temp=temp->link;<br>
+                                 count++;<br>
+                            }
+                        printf("\n\nNUMBER OF NODE IN LIST::%d\n\n",count);
+                          }/end of else/
+                        }/end of function display/
+                         NODE stack_integers(NODE start)
+                        {
+                            int choice;
+                        printf("\nOPERATIONS ON STACK\n");
+                            for(;;)
+                            {
+                        printf("\nLIST AS STACK\n");
+                                printf("\n1:PUSH\n2:POP\n3:DISPLAY\n4:EXIT\n");
+                                printf("\nEnter choice::\n");
+                        scanf("%d",&choice);
+                                switch(choice)
+                                {
+                                    case 1:start=insert_front(start);
+                                    break;
+                                    case 2:start=delete_front(start);
+                                    break;
+                                    case 3:display(start);
+                                    break;
+                        default:printf("Not a valid choice\n"); return;
+                                }/end of switch/
+                            }/end of for/
+                        }
+                        int linearsearch(NODE start)
+                        {
+                        int key,flag=0,n,i;
+                           NODE p;
+                           printf("List with n nodes creation\n");
+                           scanf("%d",&n);
+                           for(i=0;i<n;i++)
+                             start=insert_front(start);
+                             display(start);
+                           printf("Enter the key you want to search\n\n");
+                        scanf("%d",&key);
+                           p=start;
+                           while(p!=NULL)
+                           {
+                              if(p->data==key)
+                                {
+                                   printf("Key found\n\n");
+                                    flag=1;
+                                   return 0;
+                                }
+                              else
+                                 p=p->link;
+                           }
+                              if(flag==0)
+                                    printf("key not found\n");
+                              return 0;
+                           }
+                         void concatination()
+                         {
+                        int n,m,i;
+                           NODE start1=NULL, start2=NULL,temp;
+                           printf("List1 with n nodes creation\n");
+                           scanf("%d",&n);
+                           for(i=0;i<n;i++)
+                             start1=insert_front(start1);
+                             display(start1);
+                           printf("List2 with m nodes creation\n");
+                        scanf("%d",&m);
+                           for(i=0;i<m;i++)
+                                start2=insert_front(start2);
+                                display(start2);
+                           temp=start1;
+                           while(temp->link!=NULL)
+                              temp=temp->link;
+                           temp->link=start2;
+                           display(start1);
+                           }
+                        void main()
+                        {
+                        int ch,n,i;
+                            for(;;)
+                            {
+                        printf("\nSINGLY LINKED LIST OPERATIONS\n");
+                                printf("\nMENU\n");
+                                printf("\n\n1:stack of integers\n2:\Linear search on SLL\n3:Concatination of two SLL\n\n");
+                                printf("Enter choice::");
+                                scanf("%d",&ch);
+                                switch(ch)
+                                {
+                                    case 1:stack_integers(start);
+                                           break;
+                                    case 2:start= linearsearch(start);
+                                           break;
+                                    case 3:concatination();
+                                           break;
+                        default:exit(0);
+                                }/end of switch/
+                            }/end of for/
+                        }/end of function main/
+                </p>
+                
+
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

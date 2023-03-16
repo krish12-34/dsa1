@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+
+    <p>
+        #include stdio.h><br>
+            #include stdlib.h><br>
+            struct node<br>
+            {<br>
+             struct node *llink; int id;<br>
+             char name[20],dept[20],area_spe[20];<br>
+             struct node *rlink;<br>
+            };<br>
+            typedef struct node* NODE;<br>
+            NODE start=NULL,start1=NULL;<br>
+            NODE create_node()<br>
+            {<br>
+             NODE ptr;<br>
+             ptr=(NODE)malloc(sizeof(struct node)); if(ptr==NULL)<br>
+             {<br>
+             printf("\n\nINSUFFICIENT MEMORY\n\n");<br>
+            exit(0);<br>
+             }<br>
+             printf("Enter professor data such as ID, NAME,DEPARTMENT,AREA OF SPECIALIZATION\n");<br>
+             printf("Enter professor id::");<br>
+             scanf("%d",&ptr->id);<br>
+             printf("Enter professor name::");<br>
+             scanf("%s",ptr->name);<br>
+             printf("Enter professor dept::");<br>
+             scanf("%s",ptr->dept);<br>
+             printf("Enter professor area specialization::");<br>
+             scanf("%s",ptr->area_spe);<br>
+             ptr->llink=NULL;<br
+             ptr->rlink=NULL;<br>
+             return ptr;<br>
+            }<br>
+            NODE insert_front(NODE start)<br>
+            {<br>
+             NODE ptr;<br>
+             ptr=create_node();<br>
+             if(start==NULL)<br>
+             start=ptr;<br>
+             else<br>
+             {<br>
+             ptr->rlink=start;<br>
+             start->llink=ptr;<br>
+             start=ptr;<br>
+             }<br>
+            }<br>
+            NODE insert_end(NODE start)<br>
+            {<br>
+             NODE ptr,temp; ptr=create_node(); if(start==NULL)<br>
+             start=ptr;<br>
+             else<br>
+             {<br>
+             temp=start;<br>
+             while(temp->rlink!=NULL)<br>
+             {<br>
+             temp=temp->rlink;<br>
+             }<br>
+             temp->rlink=ptr;<br>
+             ptr->llink=temp;<br>
+            }<br>
+            return start;<br>
+            }<br>
+            NODE delete_front(NODE start)<br>
+            {<br>
+             NODE temp;<br>
+             if(start==NULL)<br>
+             printf("\n\nDoubly linked List is empty:\n\n");<br>
+             else<br>
+             {<br>
+             temp=start;<br><br>
+             start=start->rlink;<br>
+             if(start!=NULL) <br>
+             {<br>
+             start->llink=NULL;<br><br>
+             }<br>
+             printf("\n\nDELETED FRONT NODE IS::\n\n");<br>
+             printf("\n\n|%d|%s|%s|%s|\n\n",temp->id,temp->name,temp->dept,temp->area_spe);<br>
+             free(temp);<br>
+             }<br>
+             return start;<br>
+            }<br>
+            NODE delete_end(NODE start)<br>
+            {<br>
+             NODE temp,p;<br>
+             if(start==NULL)<br>
+             {<br>
+             printf("\n\nDoubly linked List is empty:\n\n");<br>
+             return;<br>
+             }<br>
+             temp=start;<br>
+             if(temp->rlink==NULL)<br>
+             {<br>
+             start=NULL;<br>
+             } <br>
+             else <br>
+             {<br>
+             while(temp->rlink!=NULL)<br>
+             {<br>
+             temp=temp->rlink;<br>
+             }<br>
+             p=temp->llink;<br>
+             p->rlink=NULL;<br>
+             }<br>
+             printf("\n\nDELETED END NODE IS::\n\n");<br>
+             printf("|%d|%s|%s|%s|",temp->id,temp->name,temp->dept,temp->area_spe);<br>
+             free(temp);<br>
+             return start;<br>
+            }<br>
+            void display(NODE start)<br>
+            {<br>
+             NODE temp; int count=0;<br>
+             if(start==NULL)<br>
+             {<br>
+             printf("\n\nDoubly linked List is empty:\n\n");
+             <br>
+              return;<br>
+             }<br>
+             temp=start;<br>
+             printf("\n\nThe nodes of the doubly linked list are:\n\n");<br>
+             while(temp!=NULL)<br>
+             {<br>
+             printf("<->|%d|%s|%s|%s|",temp->id,temp->name,temp->dept,temp->area_spe);<br>
+             temp=temp->rlink;<br>
+             count++;<br>
+             }<br>
+             printf("\n\nNumber of node in doubly link list are::%d",count);<br>
+            }<br>
+            NODE dll_stack(NODE start)<br>
+            {<br>
+             int choice;<br>
+             printf("\nOPERATIONS ON STACK\n");<br>
+             for(;;)<br>
+             {<br>
+             printf("\nLIST AS STACK\n");<br>
+             printf("\n1:PUSH\n2:POP\n3:DISPLAY\n4:EXIT\n");<br>
+             printf("\nEnter choice::\n");<br>
+             scanf("%d",&choice);<br>
+             switch(choice)<br>
+             {<br>
+             case 1:start=insert_front(start);<br>
+             break;<br>
+             case 2:start=delete_front(start);<br>
+             break;<br>
+             case 3:display(start);<br>
+             break;<br>
+             default:printf("Not a valid choice\n");<br>
+             return;<br>
+             }<br>
+             }<br>
+            }<br>
+             NODE dll_queue(NODE start1)<br>
+             {<br>
+             int choice;<br>
+             printf("\nOPERATIONS ON STACK\n");<br>
+             for(;;)<br>
+             {<br>
+             printf("\nLIST AS STACK\n");<br>
+             printf("\n1:INSERT\n2:DELETE\n3:DISPLAY\n4:EXIT\n");<br>
+             printf("\nEnter choice::\n");<br>
+             scanf("%d",&choice);<br>
+             switch(choice)<br>
+             {<br>
+             case 1:start1=insert_end(start1);
+             break;<br>
+             case 2:start1=delete_front(start1);<br>
+             break;<br>
+             case 3:display(start1);<br>
+             break;<br>
+             default:printf("Not a valid choice\n");<br>
+             return;<br>
+             }<br>
+             }<br>
+             }<br>
+            void main()<br>
+            {<br>
+             int ch;<br>
+             for( ;;)<br>
+             {<br>
+             printf("\nMENU\n");<br>
+             printf("\n1:DLL AS STACK\n2:DLL AS QUEUE\n");<br>
+             printf("\nEnter the choice:: ");<br>
+             scanf("%d",&ch);<br>
+             switch(ch)<br>
+             {<br>
+             case 1:start=dll_stack(start);<br>
+             break;<br>
+             case 2:start=dll_queue(start1);<br>
+             break;<br>
+             default:exit(0);<br>
+             }<br>
+             }<br>
+            }<br>
+    </p>
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

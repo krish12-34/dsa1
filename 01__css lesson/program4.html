@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <p>
+                        #include stdio.h<br>
+
+                            #include string.h><br>
+                            #include ctype.h><br>
+                            #include math.h><br>
+                            #include stdlib.h><br>
+                            #define STACK_SIZE 50<br>
+                           
+                            int stack[STACK_SIZE];<br>
+                            int top = -1;<br>
+                            void push(int a)<br>
+                            {<br>
+                            stack[++top] = a;<br>
+                            return;<br>
+                            }<br>
+                            int pop()<br>
+                            {<br>
+                            return (stack[top--]);<br>
+                            }<br>
+                            int eval(char s[])<br>
+                            {<br>
+                            int i;<br>
+                            int temp, op1, op2, result;<br>
+                            char symbol[1];<br>
+                            for(i = 0; i < strlen(s); i++)<br>
+                            {<br>
+                            if(isalnum(s[i]))<br>
+                            {<br>
+                            if(isdigit(s[i]))<br>
+                            {<br>      
+                            symbol[0] = s[i];<br>
+                            temp = atoi(symbol);<br>
+                            push(temp);<br>
+                            }<br>
+                            
+                            else<br>
+                            {<br>
+                            printf("\n\nEnter a value of %c::",s[i]);<br>
+                            scanf("%d", &temp);<br>
+                            push(temp);<br>
+                            }<br>
+                            }<br>
+                            else<br>
+                            {<br>
+                            op2 = pop();<br>
+                            op1 = pop();<br>
+                            switch(s[i])<br>
+                            {<br>
+                            case '*': result = op1 * op2;<br>
+                            break;<br>
+                            case '/': if(op2==0)<br>
+                            {<br>
+                            printf("Divide by zero error\n\n");<br>
+                            exit(0);<br>
+                            }<br>
+                            else<br>
+                            result = op1 / op2;<br>
+                            break;<br>
+                            case '%': if(op2==0)<br>
+                            {<br>
+                            }<br>
+                            else<br>
+                            printf("Divide by zero error\n\n");<br>
+                            exit(0);<br>
+                            result = op1 %op2;<br>
+                            break;<br>
+                            case '+': result = op1 + op2;<br>
+                            break;<br>
+                            case '-': result = op1 - op2;<br>
+                            break;<br>
+                            default:<br>
+                            
+                            
+                            printf("Invalid Expression\n");<br>
+                            exit(0);<br>
+                            }<br>
+                            push(result);<br>
+                            }<br>
+                            result = pop();<br>
+                            }<br>
+                            
+                            
+                            if(top != -1)<br>
+                            {<br>
+                            }<br>
+                            return result;<br>
+                            printf("Invalid Expression\n");<br>
+                            exit(0);<br>
+                            }<br>
+                            Enter a value of a::9<br>
+                            Enter a value of b::4<br>
+                            Enter a value of c::2<br>
+                            void main()<br>
+                            {<br>
+                            char s[50];<br>
+                            printf("\t\tEVALUATION OF POSTFIX EXPRESSION\n");<br>
+                            printf("\n\nEnter the postfix expression\n");<br>
+                            gets(s);<br>
+                            printf("\n\nThe result of the evaluation is: %d\n", eval(s));<br>
+                            return;<br>
+                            }<br>
+                            
+                            
+                    </p>
+                </li>
+                
+
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

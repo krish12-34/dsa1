@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+              <p>
+                #includ stdio.h><br>
+                    #include stdlib.h><br> 
+                    
+                    #include string.h> <br>
+                    struct record<br>
+                    {<br>
+                    int empno,flag;<br>
+                    char name[10];<br>
+                    }emp[100];<br>
+                    int hash(int m)<br>
+                    {<br>
+                    int r;<br>
+                     r=m%100;<br>
+                    return r;<br>
+                    }<br>
+                    void main()<br>
+                    {<br>
+                    int m,k,eno,loc,i,n,j;<br>
+                    char name[10];<br>
+                    FILE *in;<br>
+                    printf("\nEnter no of records to read from file: ");<br>
+                    scanf("%d",&n);<br>
+                    in = fopen("input.txt", "r");<br>
+                    if(n<=10)<br>
+                    {<br>
+                    for(k=0;k<100;k++)<br>
+                    emp[k].flag=0;<br>
+                    for(i=0;i<n;i++)<br>
+                    {<br>
+                    fscanf(in,"%d%s",&eno,name);<br>
+                    loc=hash(eno);<br>
+                    if(emp[loc].flag==0)<br>
+                    {<br>
+                    printf("\nRecord:%d is mapped to address:%d\n",i,loc);<br>
+                    emp[loc].empno=eno;<br>
+                    emp[loc].flag=1;<br>
+                    strcpy(emp[loc].name,name);<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                    printf("\n\nCollision occured for record %d resolved using<br>
+                    linear probing\n\n",i);<br>
+                    for(j=loc+1;j<100;j++)<br>
+                    {<br>
+                    if(emp[j].flag==0)<br>
+                    {<br>
+                    printf("\nRecord:%d is at address:%d\n",i,j);<br>
+                    strcpy(emp[j].name,name);<br>
+                    emp[j].empno=eno;<br>
+                    emp[j].flag=1;<br>
+                    break;<br>
+                    }<br>
+                    }<br>
+                    if(j>=100)<br>
+                    {<br>
+                    printf("HASH TABLE IS FULL\n");<br>
+                    printf("\n \n");<br>
+                    }<br>
+                    }<br>
+                    }<br>
+                    fclose(in);<br>
+                    printf("\n\nThe Hash Table Content is: ");<br>
+                    for(i=0;i<100;i++)<br>
+                    {<br>
+                    if(emp[i].flag==1)<br>
+                    printf("\n%d\t%d\t%s",i,emp[i].empno,emp[i].name);<br>
+                    }<br>
+                    else<br>
+                    else<br>
+                    printf("\n####");<br>
+                    }<br>
+                    printf("\nFile is containing only 10 records\n\n");<br>
+                    }<br>
+              </p>  
+
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+               <p>
+                #include stdio.h><br>
+                    #include stdlib.h><br>
+                    #define MAX 10<br>
+                    int a[MAX],n;<br>
+                    void create(),display(),insert(),delete();<br>
+                    void main()<br>
+                    {<br>
+                    int ch;<br>
+                    printf("\n IMPLEMENTATION OF OPERATIONS ON ARRAY\n");<br>
+                    for(;;)<br>
+                    {<br>
+                    printf("\nMENU\n");<br>
+                    printf("\n1:CREATE \n2:DISPLAY\n3:INSERT\n4:DELETE\n");<br>
+                    printf("\n Enter your choice::");<br>
+                    scanf("%d",&ch);<br>
+                    switch(ch)<br>
+                    {<br>
+                    case 1:create();<br>
+                    break;<br>
+                    case 2:display();<br>
+                    break;<br>
+                    case 3:insert();<br>
+                    break;<br>
+                    case 4:delete();<br>
+                    break;<br>
+                    case 5:exit(0);<br>
+                    }<br>
+                    } <br>
+                    } <br>
+                    
+                    void create()<br>
+                    {<br>
+                    int i;<br>
+                    printf("\nARRAY CREATION\n");<br>
+                    printf("\n Enter the number of elements in array::");<br>
+                    scanf("%d",&n);<br>
+                    printf("\n Enter the elements\n");<br>
+                    for(i=0;i<n;i++)<br>
+                    scanf("%d",&a[i]);<br>
+                    }<br>
+                    void display()<br>
+                    {<br>
+                    int i;<br>
+                    printf("\n ARRAY ELEMENTS ARE::\n");<br>
+                    for(i=0;i<n;i++)<br>
+                    printf("%d\t", a[i]);<br>
+                    }<br>
+                    void insert()<br>
+                    {<br>
+                    int i,ele,pos;<br>
+                    printf("\n ELEMENT INSERTION\n");<br>
+                    if(n==MAX)<br>
+                    printf("\n ARRAY IS FULL, INSERSION IS NOT POSSIBLE\n");<br>
+                    else<br>
+                    {<br>
+                    printf("\n Enter the position less or equal to n+1 to insert the element::");<br>
+                    scanf("%d",&pos);<br>
+                    if(pos<=n+1)<br>
+                    {<br>
+
+                    printf("\n Enter the element to insert::");<br>
+                    scanf("%d",&ele);<br>
+                    for(i=n-1;i>=pos-1;i--)<br>
+                    a[i+1]=a[i];<br>
+                    a[pos-1]=ele;<br>
+                    ++n;<br>
+                    }<br>
+                    else<br>
+                    printf("\n Invalid position\n");<br>
+                    } <br>
+                    }<br>
+                    
+                    void delete()<br>
+                    {<br>
+                    int item,i,pos;<br>
+                    printf("\n ELEMENT DELETION\n");<br>
+                    if(n==0)<br>
+                    printf("\nARRAY IS EMPTY DELETION NOT POSSIBLE\n");<br>
+                    else<br>
+                    {<br>
+                    printf("\n Enter the position less than or equal to n to delete element::");<br>
+                    if(pos<=n)<br>
+                    {<br>
+                    item=a[pos-1];<br>
+                    printf("\n DETETED ITEM IS::%d\n", item);<br>
+                    --n;<br>
+                    for(i=pos-1;i<n;i++)<br>
+                    a[i]=a[i+1];<br>
+                    }<br>
+                    else<br>
+                    printf("\n Invalid position\n");<br>
+                    }<br>
+                    }<br>
+                    
+                    
+               </p>
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

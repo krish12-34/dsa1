@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <p>
+                    #include stdio.h><br>
+                        #include stdlib.h><br>
+                        struct node<br>
+                        {<br>
+                        struct node *lchild;<br>
+                        int data;<br>
+                        struct node *rchild;<br>
+                        };<br>
+                        typedef struct node* NODE;<br>
+                        NODE root=NULL;<br>
+                        NODE create_node(int a[], int i)<br>
+                        {<br>
+                         NODE ptr;<br>
+                         ptr=(NODE)malloc(sizeof(struct node));<br>
+                         if(ptr==NULL)<br>
+                         {<br>
+                         printf("Insufficient memory\n");<br>
+                         exit(0);<br>
+                         }<br>
+                         else<br>
+                         {<br>
+                         ptr->data=a[i];<br>
+                         ptr->lchild=ptr->rchild=NULL;<br>
+                         }<br>
+                         return ptr;<br>
+                        }<br>
+                        NODE insert_levelorder(NODE root,int a[], int i, int n)<br>
+                        {<br>
+                         NODE ptr;<br>
+                         if(i<=n)<br>
+                         {<br>
+                         ptr=create_node(a,i);<br>
+                         root=ptr;<br>
+                         if(i==1)<br>
+                         {<br>
+                         printf("\nRoot of the BINARY TREE created using level order is:%d\n",root->data);<br>
+                         }<br>
+                        
+                        D
+                         root->lchild=insert_levelorder(root->lchild,a,2*i,n);<br>
+                         root->rchild=insert_levelorder(root->rchild,a,2*i+1,n);<br>
+                         
+                         }<br>
+                         return root;<br>
+                        }<br>
+                        void inorder(NODE t)<br>
+                        {<br>
+                         if(t!=NULL)<br>
+                         {<br>
+                         inorder(t->lchild);<br>
+                         printf("%d\t",t->data);<br>
+                         inorder(t->rchild);<br><br>
+                         }<br>
+                        }<br>
+                        int main()<br>
+                        {<br>
+                         int a[20],i,n;<br>
+                         printf("Enter the number of you want in BINARY TREE elements::");<br>
+                         scanf("%d",&n);<br>
+                        printf("Enter the elements in the array, from this array BINARY TREE is <br>
+                        constructed\n");<br>
+                         for(i=1;i<=n;i++)<br>
+                         scanf("%d",&a[i]);<br>
+                         root=insert_levelorder(root,a,1,n);<br>
+                         printf("\nConstructed BINARY TREE IN LEVEL ORDER IS\n");<br>
+                         inorder(root);<br>
+                        }<br>
+                        
+                </p>
+
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

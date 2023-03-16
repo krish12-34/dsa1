@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <p>
+                    #include stdio.h><br>
+                        #include stdlib.h><br>
+                        #include string.h><br>
+                        #define max 5<br>
+                        void push(),pop(),display(),overflow_underflow(),palindrome();<br>
+                        int stack[max],top=-1,top1=-1;<br>
+                        void main()<br>
+                        {<br>
+                        int ch,item;<br>
+                        printf("\nStack Operations\n");<br>
+                        for(;;)<br>
+                        {<br>
+                        printf("\n1.Push\n2.Pop\n3.Character Stack to check palindrome\n<br>
+                        4. Overflow_Underflow\n5.Display\n6:Exit\n");<br>
+                        printf("\nEnter your Choice:");<br>
+                        scanf("%d",&ch);<br>
+                        switch(ch)<br>
+                        {<br>
+                        case 1:push();<br>
+                        break;<br>
+                        case 2: pop();<br>
+                        break;<br>
+                        case 3:palindrome();<br>
+                        break;<br>
+                        case 4:overflow_underflow();<br>
+                        break;<br>
+                        case 5:display();<br>
+                        break;<br>
+                        case 6: exit(0);<br>
+                        }<br>
+                        }<br>
+                        } <br>
+                        
+                        void push()<br>
+                        {<br>
+                        int ele;<br>
+                        printf("\nstack overflow\n");<br>
+                        else<br>
+                        {<br>
+                        printf("\nEnter element to push:");<br>
+                        scanf("%d",&ele);<br>
+                        stack[++top]=ele;<br>
+                        }<br>
+                        } <br>
+                        void pop()<br>
+                        {<br>
+                        int num;<br>
+                        if(top==-1)<br>
+                        printf("\nUnderflow\n");<br>
+                        else<br>
+                        {<br>
+                        num=stack[top--];<br>
+                        printf("\n Popped element::%d\n",num);<br>
+                        } <br>
+                        }<br>
+                        void overflow_underflow()<br>
+                        {<br>
+                        if(top==max-1)<br>
+                        printf("\nStack full\n");<br>
+                        if(top==-1)<br>
+                        printf("\nStack underflow\n");<br>
+                        }<br>
+                        void display()<br>
+                        {<br>
+                        int i;<br>
+                        if(top==-1)<br>
+                        printf("\nStack is Empty\n");<br>
+                        else<br>
+                        {<br>
+                        printf("\n Elements on stack are::\n");<br>
+                        for(i=top;i>=0;i--)<br>
+                        printf("%d\n",stack[i]);<br>
+                        } <br>
+                        } <br>
+                        
+                        void palindrome()<br>
+                        {<br>
+                        int i=0,j=0;<br>
+                        char s[10],st[10],rev[10];<br>
+                        printf("\nEnter the string to check palindrome::");<br>
+                        scanf("%s",s);<br>
+                        while(s[i]!='\0')<br>
+                        {<br>
+                        st[++top1]=s[i];<br>
+                        i++;<br>
+                        }<br>
+                        while(top1!=-1)<br>
+                        {<br>
+                        rev[j]=st[top1--];<br>
+                        j++;<br>
+                        }<br>
+                        rev[j]='\0';<br>
+                        if(strcmp(s,rev)==0)<br>
+                        printf("\n String %s is palindrome\n",s);<br>
+                        else<br>
+                        printf("\n String %s is not palindrome\n",s);<br>
+                        }<br>
+                        
+                </p>
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

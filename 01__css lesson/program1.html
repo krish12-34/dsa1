@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+
+               <p>
+            #include stdio.h><br>
+                    #include stdlib.h><br>
+                    #define MAX 10<br>
+                    int a[MAX],n;<br>
+                    void create(),display();<br>
+                    void main()<br>
+                    {<br>
+                    int ch;<br>
+                    printf("\n IMPLEMENTATION OF OPERATIONS ON ARRAY\n");<br>
+                    for(;;)<br>
+                    {<br>
+                    printf("\nMENU\n");<br>
+                    printf("\n1:CREATE \n2:DISPLAY\n");<br>
+                    printf("\n Enter your choice::");<br>
+                    scanf("%d",&ch);<br>
+                    switch(ch)<br>
+                    {<br>
+                    case 1:create();<br>
+                    break;<br>
+                    case 2:display();<br>
+                    break;<br>
+                    case 3:exit(0);<br>
+                    }<br>
+                    } <br>
+                    } <br>                  
+                    void create()<br>
+                    {<br>
+                    int i;<br>
+                    printf("\nARRAY CREATION\n");<br>
+                    printf("\n Enter the number of elements in array::");<br>
+                    scanf("%d",&n);<br>
+                    printf("\n Enter the elements\n");<br>
+                    for(i=0;i<n;i++)<br>
+                    scanf("%d",&a[i]);<br>
+                    }<br>
+                    void display()<br>
+                    {<br>
+                    int i;
+                    printf("\n ARRAY ELEMENTS ARE::\n");<br>
+                    for(i=0;i<n;i++)<br>
+                    printf("%d\t", a[i]);<br>
+                    }<br>
+                    
+                    
+               </p>
+                
+                
+
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

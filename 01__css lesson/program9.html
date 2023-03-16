@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <p>
+                    #include stdio.h> <br>
+                        #include stdio.h> <br
+                        void bfs(int a[10][10],int n,int u) <br>
+                        { <br>
+                        int front,rear,q[10],visited[10],v,i; <br>
+                        for(i=0;i<n;i++) <br>
+                        visited[i]=0; <br>
+                        front=0; <br>
+                        rear=-1; <br>
+                        printf("\nThe nodes visited from %d are::\n",u); <br>
+                        q[++rear]=u; <br>
+                        visited[u]=1; <br>
+                        printf("%d\t",u); <br>
+                        while(front<=rear) <br>
+                         { <br>
+                        u=q[front++]; for(v=0;v<n;v++) <br>
+                         { <br>
+                        if(a[u][v]==1&&visited[v]==0) <br>
+                         { <br>
+                        printf("%d\t",v); <br>
+                        visited[v]=1; <br>
+                        q[++rear]=v; <br>
+                         }<br>
+                         }<br>
+                         }<br>
+                        }<br>
+                        void main()<br>
+                        { <br>
+                        int a[10][10],n,source,i,j;<br>
+                        printf("\nEnter number of vertices::"); <br>
+                        scanf("%d",&n); <br>
+                        printf("\nEnter the graph as adjacency matrix\n");<br>
+                        for(i=0;i<n;i++) <br>
+                        { <br>
+                        for(j=0;j<n;j++) <br>
+                        scanf("%d",&a[i][j]); <br>
+                        } <br>
+                        printf("Enter source vertex::"); <br>
+                        scanf("%d",&source); <br>
+                        printf("\nBFS OF GIVEN GRAPH\n"); <br>
+                        bfs(a,n,source);<br>
+                        
+        
+                        }<br>
+                
+                    
+                </p>
+
+    
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>

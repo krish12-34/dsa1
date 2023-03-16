@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AGT">
+    <meta name="description" content="Contact information of cow trust">
+    <title>program-1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+</head>
+
+<body>
+    
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+
+    <p>
+        #include  stdio.h><br>
+            #include stdlib.h><br>
+            struct node<br>
+            {<br>
+            struct node *lchild;<br>
+            int data;<br>
+            struct node *rchild;<br><br>
+            };<br>
+            typedefstruct node* NODE;<br>
+            NODE root=NULL;<br>
+            NODE create_node()<br>
+            {<br>
+            NODE ptr; ptr=(NODE)malloc(sizeof(struct node));<br>
+            if(ptr==NULL)<br>
+            {<br>
+            printf("Insufficient memory\n");<br>
+            exit(0);<br>
+            }<br>
+            else<br>
+            {<br>
+            printf("Enter data:: ");<br>
+            scanf("%d",&ptr->data);<br>
+            ptr->lchild=ptr->rchild=NULL;<br>
+            }<br>
+            return ptr;<br>
+            }<br><br>
+            NODE create_bst(NODE root)<br>
+            {<br>
+            NODE ptr, temp, p;<br>
+            ptr=create_node();<br>
+            if(root==NULL)<br>
+            {<br>
+            root=ptr;<br>
+            return root;<br>
+            }<br>
+            p=NULL;<br>
+            temp=root;<br>
+            while(temp!=NULL)<br>
+            {<br>
+            p=temp;<br>
+           
+            if(ptr->data==temp->data)<br>
+            {<br>
+            printf("Duplicate items are not allowed\n\n"); <br>
+            free(ptr);<br>
+            return root;<br><br>
+            }<br>
+            if(ptr->data<temp->data)<br>
+            temp=temp->lchild;<br>
+            else<br>
+            temp=temp->rchild;<br>
+             }<br>
+            if(ptr->data<p->data)<br>
+            p->lchild=ptr;<br>
+            else<br>
+            p->rchild=ptr;<br>
+            return root;<br>
+            }<br>
+            void inorder(NODE t)<br>
+            {<br>
+            if(t!=NULL)<br>
+             {<br>
+            inorder(t->lchild);<br>
+            printf("%d\t",t->data);<br>
+            inorder(t->rchild);<br>
+             }<br>
+            }<br>
+            void preorder(NODE t)<br>
+            {<br>
+            if(t!=NULL)<br>
+            {<br>
+            printf("%d\t",t->data);<br>
+            preorder(t->lchild); <br>
+            preorder(t->rchild);<br>
+            }<br>
+            }<br>
+            void postorder(NODE t)<br><br>
+            {<br>
+            if(t!=NULL)<br>
+             {<br>
+            postorder(t->lchild);<br>
+            postorder(t->rchild); <br>
+            printf("%d\t",t->data);<br>
+            }<br>
+            }<br>
+            void traverse(NODE root)<br>
+            {<br>
+            if(root==NULL)<br>
+            printf("Empty tree\n\n");<br>
+           
+            else<br>
+            {<br>
+            printf("\n\nPreorder traversal:\t");<br>
+            preorder(root);<br>
+            printf("\n\nInorder traversal:\t");<br>
+            inorder(root);<br>
+            printf("\n\nPostorder traversal:\t");<br>
+            postorder(root);<br>
+            }<br>
+            }<br>
+            void main()<br>
+            {<br>
+            int ch,n,i;<br>
+            for(;;)<br>
+            {<br>
+            printf("\n\nOPERATIONS ON BST\n\n");<br>
+            printf("\n\n1:CREATE BST \n2:TRAVERSE BST\n3:EXIT\n\n");<br>
+
+            printf("Enter your choice::");<br>
+            scanf("%d",&ch);<br>
+            switch(ch)<br>
+            {<br>
+            case 1:printf("Enter number of elements in BST::");<br>
+            scanf("%d",&n);<br>
+            for(i=0;i<n;i++)<br>
+            root=create_bst(root);<br>
+            break;<br>
+            case 2: traverse(root);<br>
+            break;<br>
+            default:exit(0);<br>
+            }<br>
+            }<br>
+            }<br>
+            
+    </p>
+        
+    
+        
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">DSA</span>
+        </p>
+    </footer>
+</body>
+
+</html>
